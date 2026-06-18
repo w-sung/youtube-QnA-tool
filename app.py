@@ -3,6 +3,8 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from groq import Groq
 import re # regular expression - specifies a set of strings that matches it
 
+
+
 ######### Backend Functions
 
 def get_video_id(url): # takes id out of youtube video url
@@ -33,7 +35,7 @@ def ask_groq(transcript, question):
 
                 {transcript[:8000]}
 
-                Based only on this transcript, answer this question:
+                Based only on this transcript, answer this question, ensuring to double check names and grammar make sense - adjusting names to which fit the context:
                 {question}"""
             }
         ]
@@ -43,11 +45,20 @@ def ask_groq(transcript, question):
 
 ######### UI
 
+st.markdown(""" 
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True) # Hides default streamlit ui
+
+
 st.title("YouTube Video Q&A")
-st.write("Paste a YouTube link and ask anything about the video.")
+st.write("Paste in a YouTube link and ask anything about the video. Only videos in english with a transcript are supported currently.")
 
 url = st.text_input("YouTube URL")
-question = st.text_input("Your question")
+question = st.text_input("Ask a Question")
 
 
 if st.button("Ask"):
@@ -64,5 +75,7 @@ if st.button("Ask"):
                 answer = ask_groq(transcript, question)
             st.success("Answer:")
             st.write(answer)
+            with st.expander("View transcript"):
+                st.text(transcript)
 
 
