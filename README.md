@@ -29,7 +29,7 @@ Fill in the key with a free API key at console.groq.com.
 
 # How to use:
 
-**1. Paste a YouTube URL into the first field **
+**1. Paste a YouTube URL into the first field**
 
 **2. Type your question about the video**
 
