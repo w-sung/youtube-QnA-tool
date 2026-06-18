@@ -8,8 +8,8 @@ Ask questions about any YouTube video. Paste a URL, type your question, and get 
 
 **1. Clone the repo**
 
-`git clone https://github.com/w-sung/Youtube-QnA-Tool.git
-cd Youtube-QnA-Tool`
+`git clone https://github.com/w-sung/youtube-QnA-tool.git
+cd youtube-QnA-tool`
 
 **2. Install dependencies**
 
