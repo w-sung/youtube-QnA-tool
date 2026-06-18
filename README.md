@@ -6,16 +6,16 @@ Ask questions about any YouTube video. Paste a URL, type your question, and get 
 
 # How to install:
 
-1. Clone the repo
+**1. Clone the repo**
 
 `git clone https://github.com/w-sung/Youtube-QnA-Tool.git
 cd Youtube-QnA-Tool`
 
-2. Install dependencies
+**2. Install dependencies**
 
 `pip install streamlit youtube-transcript-api groq`
 
-3. Set up your API key
+**3. Set up your API key**
 
 Create a .streamlit/secrets.toml file with this line:
 
@@ -23,7 +23,7 @@ Create a .streamlit/secrets.toml file with this line:
 
 Fill in the key with a free API key at console.groq.com.
 
-4. Run the app by pasting into terminal:
+**4. Run the app by pasting into terminal:**
 
 `python -m streamlit run app.py`
 
