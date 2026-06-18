@@ -1,9 +1,10 @@
 Ask questions about any YouTube video. Paste a URL, type your question, and get an answer based on the video's transcript. Uses Groq ai api.
 
-#Tech used:# Python · Streamlit · Groq API (Llama 3.1) · youtube-transcript-api
-#Prerequisites:# Python 3.8+
+**Tech used:** Python · Streamlit · Groq API (Llama 3.1) · youtube-transcript-api
 
-#How to install:#
+**Prerequisites:** Python 3.8+
+
+# How to install:
 
 1. Clone the repo
 
@@ -26,7 +27,7 @@ Fill in the key with a free API key at console.groq.com.
 
 `python -m streamlit run app.py`
 
-#How to use:#
+# How to use:
 
 Paste a YouTube URL into the first field
 Type your question about the video
