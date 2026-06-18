@@ -29,8 +29,11 @@ Fill in the key with a free API key at console.groq.com.
 
 # How to use:
 
-Paste a YouTube URL into the first field
+Paste a YouTube URL into the first field 
+
 Type your question about the video
+
 Hit Ask — the answer appears on the left, the full transcript on the right
+
 
 Note: Only works with videos that have subtitles/captions enabled.
