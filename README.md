@@ -33,7 +33,7 @@ Fill in the key with a free API key at console.groq.com.
 
 **2. Type your question about the video**
 
-**3. Hit Ask — the answer appears on the left, the full transcript on the right**
+**3. Hit Ask, then the answer appears below, with the full transcript**
 
 
 Note: Only works with videos that have subtitles/captions enabled.
