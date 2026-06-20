@@ -12,18 +12,18 @@ def get_video_id(url): # takes id out of youtube video url
     match = re.search(pattern, url)
     return match.group(1) if match else None
 
-def get_transcript(url):
+def get_transcript(url): # api call to get video transcript
     video_id = get_video_id(url)
     if not video_id:
         return None, "Couldn't extract video ID"
     try:
         api = YouTubeTranscriptApi()
-        transcript_data = api.fetch(video_id)
+        transcript_data = api.fetch(video_id, languages = [language[1], 'en'])
         return ' '.join([item.text for item in transcript_data]), None
     except Exception as e:
         return None, str(e)
 
-def ask_groq(transcript, question):
+def ask_groq(transcript, question): # LLM inference
     client = Groq(api_key=st.secrets["GROQ_API_KEY"])
     
     response = client.chat.completions.create(
@@ -55,10 +55,22 @@ header {visibility: hidden;}
 
 
 st.title("YouTube Video Q&A")
-st.write("Paste in a YouTube link and ask anything about the video. Only videos in english with a transcript are supported currently.")
+st.write("Paste in a YouTube link, select the language of the video, then ask anything about it.")
 
 url = st.text_input("YouTube URL")
 question = st.text_input("Ask a Question")
+
+language = st.selectbox("Transcript Language", [
+    ("English", "en"),
+    ("Chinese", "zh"),
+    ("French", "fr"),
+    ("Spanish", "es"),
+    ("Portuguese", "pt"),
+    ("Japanese", "ja"),
+    ("Hindi", "hi"),
+    ("Korean", "ko"),
+    ("Russian", "ru"),
+], format_func=lambda x: x[0] )
 
 
 if st.button("Ask"):
